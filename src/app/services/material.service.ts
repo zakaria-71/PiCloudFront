@@ -27,4 +27,7 @@ export class MaterialService {
   deleteMaterial(idMaterial:any):Observable<any>{
     return this.http.delete("http://localhost:8080/deleteMaterial/" + idMaterial)
   }
+  sayHello(){
+    return "hello"
+  }
 }

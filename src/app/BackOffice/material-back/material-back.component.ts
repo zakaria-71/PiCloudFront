@@ -1,17 +1,19 @@
-import {Component, OnInit} from '@angular/core';
-import {ScriptLoaderService} from "../../services/script-loader.service";
+import { Component, OnInit } from '@angular/core';
+import { ScriptLoaderService } from '../../services/script-loader.service';
+import {MaterialService} from "../../services/material.service";
 
 @Component({
-  selector: 'app-all-template-back',
-  templateUrl: './all-template-back.component.html',
-  styleUrls: ['./all-template-back.component.scss']
+  selector: 'app-material-back',
+  templateUrl: './material-back.component.html',
+  styleUrls: ['./material-back.component.scss'],
 })
-export class AllTemplateBackComponent implements OnInit{
+export class MaterialBackComponent implements OnInit {
 
-  constructor(private scriptLoaderService: ScriptLoaderService) { }
-
+  showMaterial: boolean = true;
+  table1Data: any;
+  table2Data: any;
+  constructor(private MaterialService:MaterialService,private scriptLoaderService: ScriptLoaderService) {}
   ngOnInit(): void {
-
     const scriptUrls = [
       "../../../../assets/BackOffice/js/bootstrap.js",
       "../../../../assets/BackOffice/assets/vendor/libs/jquery/jquery.js",
@@ -23,9 +25,17 @@ export class AllTemplateBackComponent implements OnInit{
       "../../../../assets/BackOffice/assets/js/ui-modals.js",
 
     ];
-
+    console.log(this.MaterialService.sayHello())
     this.loadScripts(scriptUrls);
-  }
+
+    this.MaterialService.retrieveAll().subscribe(
+      (data) => {
+        this.table1Data = data;
+        this.table2Data=data;
+        console.log(this.table2Data);
+
+      });
+    }
 
   loadScripts(scriptUrls: string[]): void {
     this.scriptLoaderService.loadScripts(scriptUrls)
@@ -36,4 +46,5 @@ export class AllTemplateBackComponent implements OnInit{
         console.error('Error loading scripts:', error);
       });
   }
+
 }

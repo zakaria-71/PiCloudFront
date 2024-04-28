@@ -10,6 +10,10 @@ import { AllTemplateFrontComponent } from './FrontOffice/all-template-front/all-
 import { FooterFrontComponent } from './FrontOffice/footer-front/footer-front.component';
 import { HeadrerFrontComponent } from './FrontOffice/headrer-front/headrer-front.component';
 import { BodyComponent } from './FrontOffice/body/body.component';
+import { MaterialFrontComponent } from './FrontOffice/material-front/material-front.component';
+import { MaterialBackComponent } from './BackOffice/material-back/material-back.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -21,10 +25,14 @@ import { BodyComponent } from './FrontOffice/body/body.component';
     FooterFrontComponent,
     HeadrerFrontComponent,
     BodyComponent,
+    MaterialFrontComponent,
+    MaterialBackComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
