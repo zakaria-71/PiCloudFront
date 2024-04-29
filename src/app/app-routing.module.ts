@@ -22,14 +22,14 @@ const routes: Routes = [
     // ]
   },
   {path:"admin",component:AllTemplateBackComponent},
-  { path: 'competitions', component: CompetitionComponent },
-  { path: 'competitions/ajouterCompt', component: AddComponent },
-  { path: 'competitions/edit/:competitionId',component:EditComponent},
-  { path: 'competitions/more/:competitionId',component:DetailsComponent},
-  { path: 'teams', component: TeamComponent },
-  { path: 'teams/ajouterTeam', component: AddtComponent },
-  { path: 'teams/editt/:idTeam',component:EdittComponent},
-  { path : 'calendar', component:CalendarComponent }
+  { path: 'admin/competitions', component: CompetitionComponent },
+  { path: 'admin/competitions/ajouterCompt', component: AddComponent },
+  { path: 'admin/competitions/edit/:competitionId',component:EditComponent},
+  { path: 'admin/competitions/more/:competitionId',component:DetailsComponent},
+  { path: 'admin/teams', component: TeamComponent },
+  { path: 'admin/teams/ajouterTeam', component: AddtComponent },
+  { path: 'admin/teams/editt/:idTeam',component:EdittComponent},
+  { path : 'admin/calendar', component:CalendarComponent }
 ];
 
 @NgModule({
