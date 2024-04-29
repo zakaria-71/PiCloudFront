@@ -1,0 +1,29 @@
+<div class="container-fluid">
+  <div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Modifier une Compétition</h1>
+  </div>
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">Modifier une Compétition</h6>
+    </div>
+    <div class="card-body justify-content">
+      <form (ngSubmit)="update()" novalidate>
+        <div >
+          <div class=".col-md-6 .offset-md-3">
+            <label for="nom" class="form-label">Nom </label>
+            <input name="nom" type="text" class="form-control" id="nom" [(ngModel)]="team.nom"  minlength="5" required>
+            <small><div *ngIf="formErrors.nom" class="text-danger">{{ formErrors.nom }}</div></small>
+          </div>
+
+          <br>
+          <div class="col-md-6" style="margin-left:250px">
+            <button type="submit" class="btn btn-dark btn-block text-white"> Modifier </button>
+          </div>
+
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>
+

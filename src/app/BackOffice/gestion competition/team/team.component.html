@@ -1,0 +1,87 @@
+<div class="d-sm-flex  justify-content-between mb-4">
+
+
+  <input type="text" name="filterInput" class="form-control bg-light border-0 small" placeholder="Rechercher .." [(ngModel)]="filterText" (ngModelChange)="filterOffers()" />
+
+
+</div>
+
+<div class="container-fluid">
+  <div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Liste des équipes</h1>
+    <a routerLink="ajouterTeam" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus-circle"></i> Ajouter </a>
+  </div>
+
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">Liste</h6>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive text-center">
+        <table id="example2" class="table table-bordered" width="100%" cellspacing="0">
+          <thead>
+          <tr>
+            <th>Identifiant</th>
+            <th>Nom</th>
+            <th>Actions</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let i of filteredTeams">
+            <td>{{i?.idTeam}}</td>
+            <td>{{i?.nom}}</td>
+            <td>
+
+              <a (click)="edit(i.idTeam)" class="btn btn-warning btn-circle btn-sm" style="margin-right: 5px;color: white"><i class="fas fa-pen-alt"></i></a>
+              <a (click)="delete(i.idTeam)" class="btn btn-danger btn-circle btn-sm" style="color: white"><i class="fas fa-trash"></i></a>
+
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Affecter Team dans Compétition
+  </button>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Affecter Team dans Compétition</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="selectTeam">Equipes</label>
+              <select class="form-control" id="selectTeam" [(ngModel)]="selectedTeamId" name="selectedTeamId">
+                <option *ngFor="let team of filteredTeams" [value]="team.idTeam">{{ team.nom }}</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="selectCompetition">Compétitions</label>
+              <select class="form-control" id="selectCompetition" [(ngModel)]="selectedCompetitionId" name="selectedCompetitionId">
+                <option *ngFor="let comp of ToShow1" [value]="comp.competitionId">{{ comp.nom }}</option>
+              </select>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" (click)="save()">Enregistrer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+<script src="assets/dataTables.bootstrap5.min.js"></script>
+<script src="assets/table-datatable.js"></script>
+<script src="assets/jquery.dataTables.min.js"></script>

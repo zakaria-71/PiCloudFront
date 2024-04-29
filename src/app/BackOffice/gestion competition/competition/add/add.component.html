@@ -1,0 +1,50 @@
+<div class="container-fluid">
+  <div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Ajouter une Compétition</h1>
+  </div>
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">Ajouter une Compétition</h6>
+    </div>
+    <div class="card-body justify-content">
+      <form *ngIf="!submitted" (ngSubmit)="saveComp()" [formGroup]="compForm" novalidate>
+      <div >
+        <div class=".col-md-6 .offset-md-3">
+          <label for="nom" class="form-label">Nom </label>
+          <input name="nom" type="text" class="form-control" id="nom" formControlName="nom" required>
+          <small><div *ngIf="compForm.get('nom')?.errors?.['required']" class="text-danger">Champ obligatoire.</div></small>
+          <small><div *ngIf="compForm.get('nom')?.errors?.['minlength']" class="text-danger">Minimum 5 caractères requis.</div></small>
+        </div>
+        <hr class="sidebar-divider">
+        <div class=".col-md-6 .offset-md-3">
+          <label for="dateDebut" class="form-label">Date début</label>
+          <input type="date" class="form-control" id="dateDebut" formControlName="dateDebut" required >
+          <small><div *ngIf="compForm.get('dateDebut')?.errors?.['required']" class="text-danger">Champ obligatoire.</div></small>
+        </div>
+        <hr class="sidebar-divider">
+        <div class=".col-md-6 .offset-md-3">
+          <label for="categorie" class="form-label">Catégorie</label>
+          <select class="form-control" id="categorie" formControlName="categorie" required>
+            <option value="FOOT">Football</option>
+            <option value="HAND">Handball</option>
+            <option value="BASKET">Basketball</option>
+            <option value="HACKATHON">Hackathon</option>
+            <option value="CHESS">Chess</option>
+            <option value="ESPORTS">Esports</option>
+            <option value="CARTE">Card Games</option>
+            <option value="BILLARD">Billiards</option>
+          </select>
+          <small *ngIf="compForm.get('categorie')?.errors?.['required']" class="text-danger">Catégorie obligatoire.</small>
+        </div>
+<br>
+      <div class="col-md-6" style="margin-left:250px">
+          <button type="submit" class="btn btn-dark btn-block text-white"> Ajouter Compétition </button>
+        </div>
+
+      </div>
+      </form>
+    </div>
+
+  </div>
+</div>
+

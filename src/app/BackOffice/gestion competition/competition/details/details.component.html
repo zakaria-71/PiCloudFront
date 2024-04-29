@@ -1,0 +1,91 @@
+  <div class="container-fluid">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+      <ul>
+        <li>La compétition : {{ competition?.nom }}</li>
+        <li>Date de début : {{ competition?.dateDebut | date:'MMM d, y H:mm' }}</li>
+      </ul>
+    </div>
+    <br>
+    <h4>Les équipes participées dans cette compétition</h4>
+    <div class="card-body">
+      <div class="table-responsive text-center">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+          <thead>
+          <tr>
+            <th>Identifiant</th>
+            <th>Nom</th>
+            <th>Note</th>
+            <th>Nombre de votes</th>
+            <th>Action</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let team of competition?.teams" [ngClass]="{'highest-vote': isHighestVoteTeam(team)}">
+            <td>{{ team?.idTeam }}</td>
+            <td>{{ team?.nom }}</td>
+            <td>
+              <ng-container *ngIf="team.votes && team.votes.length > 0">
+                <!-- Affichage des étoiles si des avis existent -->
+                <ng-container *ngFor="let fullStar of [].constructor(Math.floor(calculateStarDisplay(team)))">
+                  <i class="fas fa-star text-warning"></i>
+                </ng-container>
+                <ng-container *ngIf="calculateStarDisplay(team) - Math.floor(calculateStarDisplay(team)) === 0.5">
+                  <i class="fas fa-star-half text-warning"></i>
+                </ng-container>
+                /5
+              </ng-container>
+              <!-- Si pas d'avis, afficher un message ou une indication -->
+              <ng-container *ngIf="!team.votes || team.votes.length === 0">
+                Aucun avis disponible.
+              </ng-container>
+
+            </td>
+            <td>{{ team?.votes?.length }}</td>
+            <td>
+              <button type="button" class="btn btn-primary" data-toggle="modal" [attr.data-target]="'#exampleModal' + team?.idTeam">
+                Voter
+              </button>
+
+
+            </td>
+            <div class="modal" [id]="'exampleModal' + team.idTeam" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal pour {{ team.nom }}  </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="form-group">
+                      <label>Notez {{ team.nom }} :</label>
+                      <div class="rating">
+
+                        <input type="radio" id="star5" name="ratingInput" value="5" (click)="handleRatingClick($event, team.idTeam)" data-dismiss="modal">
+                        <label for="star5"><i class="fas fa-star" style="font-size: 20px"></i></label>
+                        <input type="radio" id="star4" name="ratingInput" value="4" (click)="handleRatingClick($event, team.idTeam)" data-dismiss="modal">
+                        <label for="star4"><i class="fas fa-star" style="font-size: 20px"></i></label>
+                        <input type="radio" id="star3" name="ratingInput" value="3" (click)="handleRatingClick($event, team.idTeam)" data-dismiss="modal">
+                        <label for="star3"><i class="fas fa-star" style="font-size: 20px"></i></label>
+                        <input type="radio" id="star2" name="ratingInput" value="2" (click)="handleRatingClick($event, team.idTeam)" data-dismiss="modal">
+                        <label for="star2"><i class="fas fa-star" style="font-size: 20px"></i></label>
+                        <input type="radio" id="star1" name="ratingInput" value="1" (click)="handleRatingClick($event, team.idTeam)" data-dismiss="modal">
+                        <label for="star1"><i class="fas fa-star" style="font-size: 20px"></i></label>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </tr>
+
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modals with Ratings -->
