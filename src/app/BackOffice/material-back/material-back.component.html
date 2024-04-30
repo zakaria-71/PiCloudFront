@@ -2,7 +2,7 @@
 
 
 
-<button (click)="showMaterial=!showMaterial" type="button" class="btn btn-dark">{{ showMaterial }}</button>
+<button (click)="showAddButton()" type="button" class="btn btn-dark">{{ addMaterialButton }}</button>
 <div *ngIf="!showMaterial">
 <!-- Form for adding a new Material -->
 <form [formGroup]="form">

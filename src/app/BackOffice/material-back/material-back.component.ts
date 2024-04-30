@@ -16,6 +16,8 @@ export class MaterialBackComponent implements OnInit {
   table2Data: any;
   form!: FormGroup;
   material:any;
+  addMaterialButton="";
+
   constructor(private MaterialService: MaterialService, private scriptLoaderService: ScriptLoaderService,private formBuilder: FormBuilder) {
   }
 
@@ -45,8 +47,18 @@ export class MaterialBackComponent implements OnInit {
         console.log(this.table2Data[0].reservationMS);
 
       });
+    this.showAddButton();
   }
 
+  showAddButton():void{
+    this.showMaterial=!this.showMaterial;
+    if (!this.showMaterial){
+      this.addMaterialButton = "View Material list"
+    }else
+    {
+      this.addMaterialButton = "Add a material"
+    }
+  }
   loadScripts(scriptUrls: string[]): void {
     this.scriptLoaderService.loadScripts(scriptUrls)
       .then(() => {

@@ -1,21 +1,23 @@
 import {Component, OnInit} from '@angular/core';
 import { ScriptLoaderService } from '../../services/script-loader.service';
-import {MaterialService} from "../../services/material.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {ReservationMService} from "../../services/reservation-m.service";
 @Component({
-  selector: 'app-material-front',
-  templateUrl: './material-front.component.html',
-  styleUrls: ['./material-front.component.scss']
+  selector: 'app-reservation-m-front',
+  templateUrl: './reservation-m-front.component.html',
+  styleUrls: ['./reservation-m-front.component.scss']
 })
-export class MaterialFrontComponent implements OnInit{
+export class ReservationMFrontComponent implements OnInit
+{
+
 
   reservation: any;
-  showMaterial: boolean = true;
+  showReservationM: boolean = true;
   table1Data: any;
   table2Data: any;
   form!: FormGroup;
-  material:any;
-  constructor(private MaterialService: MaterialService, private scriptLoaderService: ScriptLoaderService,private formBuilder: FormBuilder) {
+  reservationM:any;
+  constructor(private ReservationMService: ReservationMService, private scriptLoaderService: ScriptLoaderService,private formBuilder: FormBuilder) {
   }
 
   ngOnInit(): void {
@@ -37,11 +39,11 @@ export class MaterialFrontComponent implements OnInit{
       image:['']
     });
 
-    this.MaterialService.retrieveAll().subscribe(
+    this.ReservationMService.getReservationByUser().subscribe(
       (data) => {
         this.table1Data = data;
         this.table2Data = data;
-        console.log(this.table2Data[0].reservationMS);
+        console.log(this.table2Data);
 
       });
   }
@@ -60,24 +62,22 @@ export class MaterialFrontComponent implements OnInit{
     this.reservation = row.reservationMS
   }
 
-  deleteMaterial(material: any): void {
-    console.log(material.idMaterial);
-    this.MaterialService.deleteMaterial(material.idMaterial).subscribe(
+  deleteMaterial(reservationM: any): void {
+    console.log(reservationM.idMaterial);
+    this.ReservationMService.deleteReservationM(reservationM.idMaterial).subscribe(
       (data) => {
         console.log("deleted item", data)
       });
   }
   addMaterial(material: any): void {
     console.log(this.form.value);
-    this.MaterialService.addMaterial(this.form.value).subscribe(
+    this.ReservationMService.addReservationM(this.form.value).subscribe(
       (data) => {
         console.log("added item", data)
-        this.showMaterial=!this.showMaterial;
+        this.showReservationM=!this.showReservationM;
       });
   }
 
 
 
 }
-
-

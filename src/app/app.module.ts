@@ -15,6 +15,8 @@ import { MaterialBackComponent } from './BackOffice/material-back/material-back.
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {HttpClientModule} from "@angular/common/http";
 import {ReactiveFormsModule} from "@angular/forms";
+import { ReservationMBackComponent } from './BackOffice/reservation-m-back/reservation-m-back.component';
+import { ReservationMFrontComponent } from './FrontOffice/reservation-m-front/reservation-m-front.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import {ReactiveFormsModule} from "@angular/forms";
     BodyComponent,
     MaterialFrontComponent,
     MaterialBackComponent,
+    ReservationMBackComponent,
+    ReservationMFrontComponent,
   ],
     imports: [
         BrowserModule,
