@@ -14,6 +14,7 @@ import { MaterialFrontComponent } from './FrontOffice/material-front/material-fr
 import { MaterialBackComponent } from './BackOffice/material-back/material-back.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {HttpClientModule} from "@angular/common/http";
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -28,12 +29,13 @@ import {HttpClientModule} from "@angular/common/http";
     MaterialFrontComponent,
     MaterialBackComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgbModule,
-    HttpClientModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        NgbModule,
+        HttpClientModule,
+        ReactiveFormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

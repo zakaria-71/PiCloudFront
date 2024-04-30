@@ -14,8 +14,8 @@ export class MaterialBackComponent implements OnInit {
   showMaterial: boolean = true;
   table1Data: any;
   table2Data: any;
-  form: FormGroup | undefined;
-
+  form!: FormGroup;
+  material:any;
   constructor(private MaterialService: MaterialService, private scriptLoaderService: ScriptLoaderService,private formBuilder: FormBuilder) {
   }
 
@@ -33,8 +33,9 @@ export class MaterialBackComponent implements OnInit {
     ];
     this.loadScripts(scriptUrls);
     this.form = this.formBuilder.group({
-      name: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]]
+      name: [''],
+      description: [''],
+      image:['']
     });
 
     this.MaterialService.retrieveAll().subscribe(
@@ -61,11 +62,21 @@ export class MaterialBackComponent implements OnInit {
   }
 
   deleteMaterial(material: any): void {
-    this.MaterialService.deleteMaterial(material).subscribe(
+    console.log(material.idMaterial);
+    this.MaterialService.deleteMaterial(material.idMaterial).subscribe(
       (data) => {
         console.log("deleted item", data)
       });
   }
+  addMaterial(material: any): void {
+    console.log(this.form.value);
+    this.MaterialService.addMaterial(this.form.value).subscribe(
+      (data) => {
+        console.log("added item", data)
+        this.showMaterial=!this.showMaterial;
+      });
+  }
+
 
 
 }

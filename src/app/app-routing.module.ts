@@ -1,7 +1,8 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AllTemplateFrontComponent } from '../app/FrontOffice/all-template-front/all-template-front.component';
-import { AllTemplateBackComponent } from '../app/BackOffice/all-template-back/all-template-back.component';
+import { AllTemplateFrontComponent } from './FrontOffice/all-template-front/all-template-front.component';
+import { AllTemplateBackComponent } from './BackOffice/all-template-back/all-template-back.component';
+import {MaterialBackComponent} from "./BackOffice/material-back/material-back.component";
 
 
 const routes: Routes = [
@@ -14,7 +15,9 @@ const routes: Routes = [
     // }
     // ]
   },
-  {path:"admin",component:AllTemplateBackComponent}
+  {path:"admin",component:AllTemplateBackComponent},
+  {path:"material", component:MaterialBackComponent}
+
 ];
 
 @NgModule({

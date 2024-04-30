@@ -5,7 +5,8 @@
 <button (click)="showMaterial=!showMaterial" type="button" class="btn btn-dark">{{ showMaterial }}</button>
 <div *ngIf="!showMaterial">
 <!-- Form for adding a new Material -->
-<div class="mb-3">
+<form [formGroup]="form">
+  <div class="mb-3">
   <label for="NameMaterialInput" class="form-label">Name</label>
   <input class="form-control" type="text" id="NameMaterialInput" placeholder="Name"/>
 </div>
@@ -17,7 +18,9 @@
     <label for="formFile" class="form-label">Add Image</label>
     <input class="form-control" type="file" id="formFile">
   </div>
+  <button (click)="addMaterial(form.value)" type="submit" class="btn btn-primary">Add</button>
 
+</form>
 </div>
 
 <!-- MAIN TABLE -->
@@ -58,7 +61,7 @@
 
         <td>
           <!-- Button trigger modal -->
-          <button (click)="deleteMaterial(item)" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#deleteModal">
+          <button (click)="material=item" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#deleteModal">
             Delete Material
           </button>
         </td>
@@ -153,7 +156,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-danger">Delele</button>
+        <button (click)="deleteMaterial(material)" type="button" class="btn btn-danger">Delele</button>
       </div>
     </div>
   </div>
