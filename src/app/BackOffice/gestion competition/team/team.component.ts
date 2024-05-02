@@ -32,7 +32,7 @@ export class TeamComponent implements OnInit {
   }
 
   edit(idTeam: any) {
-    this.router.navigate(['teams/editt/' + idTeam]); // Corrected: Changed 'editt' to 'edit'
+    this.router.navigate(['admin/teams/editt/' + idTeam]); // Corrected: Changed 'editt' to 'edit'
   }
 
   delete(idTeam: any) {

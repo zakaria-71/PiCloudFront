@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http'; // Import HttpClientModule
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +24,11 @@ import {DetailsComponent} from "./BackOffice/gestion competition/competition/det
 import {VoteComponent} from "./BackOffice/gestion competition/vote/vote.component";
 import {CalendarComponent} from "./BackOffice/gestion competition/calendar/calendar.component";
 import {ToastrModule} from "ngx-toastr";
+import { CompetitionssComponent } from './FrontOffice/competitionss/competitionss.component';
+import { TeamssComponent } from './FrontOffice/teamss/teamss.component';
+import { HomeComponent } from './BackOffice/home/home.component';
+import { CalendarrComponent } from './FrontOffice/calendarr/calendarr.component';
+import {NgChartsModule} from "ng2-charts";
 
 @NgModule({
   declarations: [
@@ -42,12 +49,18 @@ import {ToastrModule} from "ngx-toastr";
     DetailsComponent,
     VoteComponent,
     CalendarComponent,
+    CompetitionssComponent,
+    TeamssComponent,
+    HomeComponent,
+    CalendarrComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    NgChartsModule,
+    BrowserAnimationsModule,
     ReactiveFormsModule,ToastrModule.forRoot({
       positionClass: 'toast-bottom-right',
 

@@ -1,4 +1,67 @@
-<body>
+<!--<div id="wrapper">
+  <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <br>
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" routerLink="home">
+      <div class="sidebar-brand-icon rotate-n-15">
+        <i class="fas fa-laugh-wink"></i>
+      </div>
+      <div class="sidebar-brand-text mx-3">Home</div>
+    </a>
+    <hr class="sidebar-divider my-0">
+    <li class="nav-item active">
+      <a class="nav-link" routerLink="home">
+        <i class="fas fa-fw fa-home"></i>
+        <span>Home</span></a>
+    </li>
+
+    <hr class="sidebar-divider">
+
+
+    <li class="nav-item">
+      <a class="nav-link" routerLink="competitions">
+        <i class="fas fa-trophy	"></i>
+        <span>Compétitions</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="teams">
+        <i class="fas fa-people-carry	"></i>
+        <span>Equipes</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="calendar">
+        <i class="fas fa-calendar"></i>
+        <span>Calendrier</span></a>
+    </li>
+
+
+    <hr class="sidebar-divider d-none d-md-block">
+    <div class="text-center d-none d-md-inline">
+      <button class="rounded-circle border-0" id="sidebarToggle"></button>
+    </div>
+
+  </ul>
+  <div id="content-wrapper" class="d-flex flex-column">
+    <div id="content">
+
+      <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+        <ul class="navbar-nav ml-auto">
+
+          <hr class="navbar-divider d-none d-md-block">
+
+
+        </ul>
+      </nav>
+
+      <router-outlet>
+
+      </router-outlet>
+    </div>
+  </div>
+
+</div>
+-->
+
 
     <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
         <div class="app-brand demo">
@@ -69,7 +132,7 @@
         <div class="menu-inner-shadow"></div>
 
         <ul class="menu-inner py-1">
-          <!-- Dashboard -->
+
           <li class="menu-item active">
             <a href="index.html" class="menu-link">
               <i class="menu-icon tf-icons bx bx-home-circle"></i>
@@ -77,7 +140,7 @@
             </a>
           </li>
 
-          <!-- Layouts -->
+
           <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
               <i class="menu-icon tf-icons bx bx-layout"></i>
@@ -139,7 +202,7 @@
               </li>
             </ul>
           </li>
-          <!-- Authentification -->
+
           <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
               <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
@@ -182,16 +245,16 @@
               </li>
             </ul>
           </li>
-          <!-- Components -->
+
           <li class="menu-header small text-uppercase"><span class="menu-header-text">Components</span></li>
-          <!-- Cards -->
+
           <li class="menu-item">
             <a href="cards-basic.html" class="menu-link">
               <i class="menu-icon tf-icons bx bx-collection"></i>
               <div data-i18n="Basic">Cards</div>
             </a>
           </li>
-          <!-- User interface -->
+
           <li class="menu-item">
             <a href="javascript:void(0)" class="menu-link menu-toggle">
               <i class="menu-icon tf-icons bx bx-box"></i>
@@ -296,7 +359,7 @@
             </ul>
           </li>
 
-          <!-- Extended components -->
+
           <li class="menu-item">
             <a href="javascript:void(0)" class="menu-link menu-toggle">
               <i class="menu-icon tf-icons bx bx-copy"></i>
@@ -323,9 +386,9 @@
             </a>
           </li>
 
-          <!-- Forms & Tables -->
+
           <li class="menu-header small text-uppercase"><span class="menu-header-text">Forms &amp; Tables</span></li>
-          <!-- Forms -->
+
           <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
               <i class="menu-icon tf-icons bx bx-detail"></i>
@@ -362,14 +425,14 @@
               </li>
             </ul>
           </li>
-          <!-- Tables -->
+
           <li class="menu-item">
             <a href="tables-basic.html" class="menu-link">
               <i class="menu-icon tf-icons bx bx-table"></i>
               <div data-i18n="Tables">Tables</div>
             </a>
           </li>
-          <!-- Misc -->
+
           <li class="menu-header small text-uppercase"><span class="menu-header-text">Misc</span></li>
           <li class="menu-item">
             <a
@@ -393,5 +456,4 @@
           </li>
         </ul>
       </aside>
-
-</body>
+<router-outlet></router-outlet>

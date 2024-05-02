@@ -1,12 +1,14 @@
-<div class="d-sm-flex  justify-content-between mb-4">
+<div class="content-wrapper" style="display: flex; justify-content: center; align-items: center; margin-left: 300px; margin-top: -1000px;">
+  <div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
 
+    </form>
+  </div>
 
+  <div class="container-fluid" >
   <input type="text" name="filterInput" class="form-control bg-light border-0 small" placeholder="Rechercher .." [(ngModel)]="filterText" (ngModelChange)="filterOffers()" />
 
 
-</div>
-
-<div class="container-fluid">
   <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800">Liste des équipes</h1>
     <a routerLink="ajouterTeam" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus-circle"></i> Ajouter </a>

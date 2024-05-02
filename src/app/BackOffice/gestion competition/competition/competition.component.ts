@@ -50,7 +50,7 @@ export class CompetitionComponent implements OnInit {
   }
 
   edit(competitionId: any) {
-    this.router.navigate(['competitions/edit/' + competitionId]);
+    this.router.navigate(['admin/competitions/edit/' + competitionId]);
   }
 
   delete(competitionId: any) {
@@ -60,7 +60,7 @@ export class CompetitionComponent implements OnInit {
   }
 
   details(competitionId: any) {
-    this.router.navigate(['competitions/more/' + competitionId]);
+    this.router.navigate(['admin/competitions/more/' + competitionId]);
   }
   filterOffers() {
     console.log('Filtering teams...');
