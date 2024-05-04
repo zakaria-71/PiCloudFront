@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {Team} from "../../BackOffice/gestion competition/models/team.model";
-import {Competition} from "../../BackOffice/gestion competition/models/competition.model";
+import {Team} from "../../components/gestion competition/models/team.model";
+import {Competition} from "../../components/gestion competition/models/competition.model";
 import {Router} from "@angular/router";
-import {CompetitionService} from "../../BackOffice/gestion competition/services/competition.service";
-import {TeamService} from "../../BackOffice/gestion competition/services/team.service";
+import {CompetitionService} from "../../components/gestion competition/services/competition.service";
+import {TeamService} from "../../components/gestion competition/services/team.service";
 
 @Component({
   selector: 'app-teamss',

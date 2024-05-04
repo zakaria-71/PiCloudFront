@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Chart} from "chart.js";
-import {CompetitionService} from "../../BackOffice/gestion competition/services/competition.service";
+import {CompetitionService} from "../../components/gestion competition/services/competition.service";
 @Component({
   selector: 'app-body',
   templateUrl: './body.component.html',

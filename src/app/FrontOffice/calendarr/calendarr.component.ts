@@ -1,6 +1,6 @@
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {Calendar} from "@fullcalendar/core";
-import {CompetitionService} from "../../BackOffice/gestion competition/services/competition.service";
+import {CompetitionService} from "../../components/gestion competition/services/competition.service";
 import dayGridPlugin from "@fullcalendar/daygrid";
 
 @Component({

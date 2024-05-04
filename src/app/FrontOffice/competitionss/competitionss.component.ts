@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {Competition} from "../../BackOffice/gestion competition/models/competition.model";
+import {Competition} from "../../components/gestion competition/models/competition.model";
 import {Router} from "@angular/router";
-import {CompetitionService} from "../../BackOffice/gestion competition/services/competition.service";
+import {CompetitionService} from "../../components/gestion competition/services/competition.service";
 import {ToastrService} from "ngx-toastr";
 
 @Component({

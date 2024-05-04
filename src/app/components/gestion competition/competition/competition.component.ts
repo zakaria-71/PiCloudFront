@@ -29,7 +29,6 @@ export class CompetitionComponent implements OnInit {
     });
   }
 
-  // Méthode pour vérifier les compétitions d'aujourd'hui
   checkTodayCompetition() {
     const today = new Date();
     this.ToShow.forEach((competition) => {
@@ -40,7 +39,6 @@ export class CompetitionComponent implements OnInit {
     });
   }
 
-  // Méthode pour vérifier si deux dates sont les mêmes (ignorant l'heure)
   isSameDate(date1: Date, date2: Date): boolean {
     return (
       date1.getFullYear() === date2.getFullYear() &&
