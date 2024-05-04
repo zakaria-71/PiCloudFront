@@ -1,0 +1,16 @@
+<div class="content-wrapper" style="display: flex; justify-content: center; align-items: center; margin-left: 300px; margin-top: -1000px;">
+  <div class="container-fluid" >
+      <div class="d-sm-flex align-items-center justify-content-between mb-4">
+      <ul>
+        <li>La réservation : {{reservationT.idResT }}</li>
+        <li>Date de début : {{ reservationT.date_debut | date:'MMM d, y H:mm' }}</li>
+        <li>Date de fin : {{ reservationT.date_fin | date:'MMM d, y H:mm' }}</li>
+        <li>Etat : {{reservationT.etat }}</li>
+        <li>nombre de places disponbiles : {{reservationT.nbre }}</li>
+        <li>Terrain : {{reservationT.terrain.name }}</li>
+
+      </ul>
+      </div><br>
+    
+  
+    </div>

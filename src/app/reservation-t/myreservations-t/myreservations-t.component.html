@@ -1,0 +1,44 @@
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+      <div class="input-group">
+        <input type="text" name="typeMat" class="form-control bg-light border-0 small" placeholder="Rechercher ..">
+      </div>
+    </form>
+  </div>
+  
+  <div class="container-fluid">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+      <h1 class="h3 mb-0 text-gray-800">Liste des reservations</h1>
+    </div>
+  
+    <div class="card shadow mb-4">
+      <div class="card-body">
+        <div class="table-responsive text-center">
+          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+            <tr>
+                <th> Date début</th>
+                <th> Date fin</th>
+                <th>nombre de places</th>     
+                <th> Terrain</th>
+                
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let reservationT of reservationTs">
+
+                <td> {{ reservationT.date_debut | date:'MMM d, y H:mm'}}</td>
+                <td> {{ reservationT.date_fin | date:'MMM d, y H:mm'}}</td>
+                <td>{{reservationT.nbre}}</td>  
+                <td *ngIf="reservationT.terrain ; else noTerrain">{{ reservationT.terrain.name| json }}</td>
+              <ng-template #noTerrain>
+                <td>"Pas de terrain"</td>
+              </ng-template>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  

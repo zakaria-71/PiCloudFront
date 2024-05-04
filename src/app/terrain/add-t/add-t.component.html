@@ -1,0 +1,47 @@
+<div class="container-fluid" style="display: flex; justify-content: center; align-items: center; margin-left: 50px; margin-top: -1000px;">
+  <div class="d-sm-flex align-items-center justify-content-between mb-4">
+  </div><br>
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">Ajouter un terrain</h6>
+    </div>
+    <div class="card-body justify-content">
+      <form *ngIf="!submitted" (ngSubmit)="saveTerrain()" [formGroup]="terrainForm" novalidate>
+        <div >
+          <div class=".col-md-6 .offset-md-3">
+            <label for="name" class="form-label">Name </label>
+            <input name="name" type="text" class="form-control" id="name" formControlName="name" required>
+            <small><div *ngIf="terrainForm.get('name')?.errors?.['required']" class="text-danger">C'est un champ obligatoire</div></small>
+          </div>
+          <hr class="sidebar-divider">
+          <div class=".col-md-6 .offset-md-3">
+            <label for="description" class="form-label">Description</label>
+            <input type="text" class="form-control" id="description" formControlName="description" required >
+            <small><div *ngIf="terrainForm.get('description')?.errors?.['required']" class="text-danger">Champ obligatoire.</div></small>
+          </div>
+          
+          <hr class="sidebar-divider">
+          <div class=".col-md-6 .offset-md-3">
+            <label for="latitude" class="form-label">Latitude</label>
+            <input type="number" class="form-control" id="latitude" formControlName="latitude" required >
+            <small><div *ngIf="terrainForm.get('latitude')?.errors?.['required']" class="text-danger">Champ obligatoire.</div></small>
+          </div>
+          <hr class="sidebar-divider">
+          <div class=".col-md-6 .offset-md-3">
+            <label for="longitude" class="form-label">Longitude</label>
+            <input type="number" class="form-control" id="longitude" formControlName="longitude" required >
+            <small><div *ngIf="terrainForm.get('longitude')?.errors?.['required']" class="text-danger">Champ obligatoire.</div></small>
+          </div>
+        
+  <br>
+        <div class="col-md-6" style="margin-left:250px">
+            <button type="submit" class="btn btn-dark btn-block text-white"> Ajouter terrain </button>
+          </div>
+  
+        </div>
+        </form>
+      </div>
+  
+    </div>
+  </div>
+  

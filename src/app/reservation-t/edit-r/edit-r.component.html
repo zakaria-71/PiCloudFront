@@ -1,0 +1,55 @@
+<div class="content-wrapper" style="display: flex; justify-content: center; align-items: center; margin-left: 300px; margin-top: -1000px;">
+  <div class="container-fluid">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+      <h1 class="h3 mb-0 text-gray-800">Modifier une réservation</h1>
+    </div>
+  <div class="card shadow mb-4">
+    <div class="card-body justify-content">
+      <form (ngSubmit)="update()" novalidate>
+        <div [formGroup]="reservationForm"  class="form-group">
+          <div class=".col-md-6 .offset-md-3">
+            <label for="date_debut" class="form-label">Date de debut</label>
+            <input type="date" class="form-control" id="date_debut" formControlName="date_debut" required >
+            <small><div *ngIf="reservationForm.get('date_debut')?.errors?.['required']" class="text-danger">Champ obligatoire</div></small>
+           </div>
+        <hr class="sidebar-divider">
+         <div class=".col-md-6 .offset-md-3">
+          <label for="date_fin" class="form-label">Date de fin</label>
+          <input type="date" class="form-control" id="date_fin" formControlName="date_fin" required >
+          <small><div *ngIf="reservationForm.get('date_fin')?.errors?.['required']" class="text-danger">Champ obligatoire</div></small>
+         </div>
+        <hr class="sidebar-divider">
+         <div class=".col-md-6 .offset-md-3">
+          <label for="etat" class="form-label">Etat </label>
+          <select name="etat" class="form-control" id="etat" formControlName="etat" required>
+           <option *ngFor="let value of etatValues" [value]="value">{{value}}</option>
+          </select>
+          <small>
+           <div *ngIf="reservationForm.get('etat')?.errors?.['required']" class="text-danger">Champ obligatoire</div>
+          </small>
+          </div>
+         <hr class="sidebar-divider">
+          <div class=".col-md-6 .offset-md-3">
+           <label for="nbre" class="form-label">Nombre de places disponibles</label>
+           <input type="text" class="form-control" id="nbre" formControlName="nbre" required>
+           <small><div *ngIf="reservationForm.get('nbre')?.errors?.['required']" class="text-danger">Champ obligatoire</div></small>
+          </div>
+        <hr class="sidebar-divider">
+          <div class=".col-md-6 .offset-md-3">
+           <label for="terrain" class="form-label">Terrain</label>
+           <select name="terrain" class="form-control" id="terrain" formControlName="terrain" required>
+            <option *ngFor="let terrain of terrainValues" [value]="terrain.name">{{ terrain.name }}</option>
+           </select>
+           <small>
+            <div *ngIf="reservationForm.get('terrain')?.errors?.['required']" class="text-danger">Champ obligatoire.</div>
+           </small>
+          </div>
+        <br>
+        <div class="col-md-6" style="margin-left:250px">
+         <button type="submit" class="btn btn-dark btn-block text-white"> Modifier </button>
+        </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

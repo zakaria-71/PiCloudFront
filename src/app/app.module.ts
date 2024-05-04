@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { HttpClientModule } from '@angular/common/http'; // Import HttpClientModule
+import { HttpClientModule, provideHttpClient } from '@angular/common/http'; // Import HttpClientModule
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +22,16 @@ import {DetailsComponent} from "./BackOffice/gestion competition/competition/det
 import {VoteComponent} from "./BackOffice/gestion competition/vote/vote.component";
 import {CalendarComponent} from "./BackOffice/gestion competition/calendar/calendar.component";
 import {ToastrModule} from "ngx-toastr";
+import { TerrainComponent } from './terrain/terrain.component';
+import { ReservationTComponent } from './reservation-t/reservation-t.component';
+import { AddRComponent } from './reservation-t/add-r/add-r.component';
+import { AddTComponent } from './terrain/add-t/add-t.component';
+import { DetailsRComponent } from './reservation-t/details-r/details-r.component';
+import { DetailsTComponent } from './terrain/details-t/details-t.component';
+import { EditRComponent } from './reservation-t/edit-r/edit-r.component';
+import { EditTComponent } from './terrain/edit-t/edit-t.component';
+import { ListReservationsComponent } from './reservation-t/list-reservations/list-reservations.component';
+import { MyreservationsTComponent } from './reservation-t/myreservations-t/myreservations-t.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +52,16 @@ import {ToastrModule} from "ngx-toastr";
     DetailsComponent,
     VoteComponent,
     CalendarComponent,
+    TerrainComponent,
+    ReservationTComponent,
+    AddTComponent,
+    AddRComponent,
+    DetailsRComponent,
+    DetailsTComponent,
+    EditRComponent,
+    EditTComponent,
+    ListReservationsComponent,
+    MyreservationsTComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,11 +69,13 @@ import {ToastrModule} from "ngx-toastr";
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,ToastrModule.forRoot({
-      positionClass: 'toast-bottom-right',
-
+      positionClass: 'toast-bottom-right'
     }),
+
   ],
-  providers: [],
+  providers: [
+    provideHttpClient()
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
