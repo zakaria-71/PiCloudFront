@@ -81,8 +81,8 @@ reserve(idResT:any, user:User):void{
     },
     error => {
       console.log("problem occured while reserving",error);
-      window.location.reload();
-      alert("La réservation a été effectué avec succés!");
+      //window.location.reload();
+      alert("ERROR");
 
     }
     
