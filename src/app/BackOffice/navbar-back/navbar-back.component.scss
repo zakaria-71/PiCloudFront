@@ -1,0 +1,8 @@
+nav.layout-navbar {
+    position: fixed;
+    top: 0;
+    right: 0;  /* Move it to the right side */
+    width: 83%;  /* Set the width to 80% */
+    z-index: 10;  /* Make sure the navbar stays on top of other elements */
+  }
+  
