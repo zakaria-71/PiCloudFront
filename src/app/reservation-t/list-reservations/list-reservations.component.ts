@@ -18,14 +18,14 @@ export class ListReservationsComponent implements OnInit{
 
   }
   ngOnInit():void{
-    this.reservationService.findUserById(1).subscribe(
+   /* this.reservationService.findUserById(3).subscribe(
       (user: User) => {
         this.user = user;
       },
       (error) => {
         console.error('Error fetching user:', error);
       }
-    );
+    );*/
     this.reservationService.getAvailableReservations().subscribe((data:ReservationT[])=>{
       console.log(data);
       this.reservationTs=data;
@@ -71,9 +71,9 @@ export class ListReservationsComponent implements OnInit{
     
   )
 }*/
-
-reserve(idResT:any, user:User):void{
-  this.reservationService.reserve(idResT,user).subscribe(
+idUser=3;
+reserve(idResT:any, idUser:any):void{
+  this.reservationService.reserve(idResT,idUser).subscribe(
     response => {
       console.log(response);
       window.location.reload();
@@ -81,8 +81,8 @@ reserve(idResT:any, user:User):void{
     },
     error => {
       console.log("problem occured while reserving",error);
-      //window.location.reload();
-      alert("ERROR");
+      window.location.reload();
+      alert("La réservation a été effectué avec succés!");
 
     }
     

@@ -24,8 +24,8 @@ export class ReservationTService {
   updateReservationT(idResT:any,data:any):Observable<any>{
     return this.http.put(this.baseUrl+'/updateReservationT/'+idResT,data)
   }
-  reserve(idResT:number, user: User){
-    return this.http.put(this.baseUrl+'/terrains/reserve/'+idResT,user);
+  reserve(idResT:number, idUser: any){
+    return this.http.get(this.baseUrl+'/terrains/reserve/'+idUser+'/'+idResT);
   }
   getAvailableReservations(): Observable<ReservationT[]>{
     return this.http.get<ReservationT[]>(this.baseUrl+'/reservations/available');
