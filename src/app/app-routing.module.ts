@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AllTemplateFrontComponent } from './FrontOffice/all-template-front/all-template-front.component';
@@ -7,6 +8,10 @@ import {MaterialBackComponent} from "./BackOffice/material-back/material-back.co
 =======
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+=======
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+>>>>>>> f42ae3051736fb46935dfcdc8251d91ade8f90d3
 import { AllTemplateFrontComponent } from '../app/FrontOffice/all-template-front/all-template-front.component';
 import { AllTemplateBackComponent } from '../app/BackOffice/all-template-back/all-template-back.component';
 import { RegisterComponent } from './components/user/register/register.component';
@@ -28,12 +33,16 @@ import {TeamssComponent} from "./FrontOffice/teamss/teamss.component";
 import {BodyComponent} from "./FrontOffice/body/body.component";
 import {HomeComponent} from "./BackOffice/home/home.component";
 import {CalendarrComponent} from "./FrontOffice/calendarr/calendarr.component";
+<<<<<<< HEAD
 >>>>>>> origin/main
+=======
+>>>>>>> f42ae3051736fb46935dfcdc8251d91ade8f90d3
 
 
 const routes: Routes = [
 
   {path:"",component:AllTemplateFrontComponent,
+<<<<<<< HEAD
 <<<<<<< HEAD
     // children:[
     // {
@@ -56,6 +65,19 @@ const routes: Routes = [
        { path : 'calendarr', component:CalendarrComponent }
      ]
   },
+=======
+     children:[
+    {
+       path:"competitionss", component:CompetitionssComponent
+     },
+       { path: 'teamss', component: TeamssComponent },
+       {
+         path:'',component:BodyComponent
+       },
+       { path : 'calendarr', component:CalendarrComponent }
+     ]
+  },
+>>>>>>> f42ae3051736fb46935dfcdc8251d91ade8f90d3
   {path:"admin",component:AllTemplateBackComponent, canActivate: [AdminGuard],
     children:[
       { path: 'competitions', component: CompetitionComponent },
@@ -74,7 +96,10 @@ const routes: Routes = [
   { path: "dashboard", component: DashboardComponent,canActivate: [AdminGuard] },
   { path: "profil", component: ProfilComponent },
   { path: "profil-edit", component: ProfilEditComponent }
+<<<<<<< HEAD
 >>>>>>> origin/main
+=======
+>>>>>>> f42ae3051736fb46935dfcdc8251d91ade8f90d3
 
 ];
 

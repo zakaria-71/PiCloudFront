@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { Component } from '@angular/core';
 
 =======
@@ -6,14 +7,22 @@ import {Component, OnInit} from '@angular/core';
 import {Chart} from "chart.js";
 import {CompetitionService} from "../../components/gestion competition/services/competition.service";
 >>>>>>> origin/main
+=======
+import {Component, OnInit} from '@angular/core';
+import {Chart} from "chart.js";
+import {CompetitionService} from "../../components/gestion competition/services/competition.service";
+>>>>>>> f42ae3051736fb46935dfcdc8251d91ade8f90d3
 @Component({
   selector: 'app-body',
   templateUrl: './body.component.html',
   styleUrls: ['./body.component.scss']
 })
 <<<<<<< HEAD
+<<<<<<< HEAD
 export class BodyComponent {
 =======
+=======
+>>>>>>> f42ae3051736fb46935dfcdc8251d91ade8f90d3
 export class BodyComponent implements OnInit{
 
   constructor(private competitionService: CompetitionService) {
@@ -84,6 +93,9 @@ export class BodyComponent implements OnInit{
   ngOnInit() {
     this.prepareToChart()
   }
+<<<<<<< HEAD
 >>>>>>> origin/main
+=======
+>>>>>>> f42ae3051736fb46935dfcdc8251d91ade8f90d3
 
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .carousel-small {
     max-height: 500px; /* Hauteur maximale du carousel */
     overflow: hidden; /* Masquer le contenu qui dépasse la hauteur maximale */
@@ -17,3 +18,24 @@
     max-height: 750px; // Adjust this value according to your design requirements
   }
   
+=======
+.carousel-small {
+    max-height: 500px; /* Hauteur maximale du carousel */
+    overflow: hidden; /* Masquer le contenu qui dépasse la hauteur maximale */
+}
+
+.carousel-inner {
+    transition: transform 0.6s ease; /* Ajouter une transition pour le mouvement des images */
+    display: flex; /* Afficher les images en ligne */
+}
+
+.carousel-item {
+    flex: 0 0 100%; /* Définir la largeur de chaque image à 100% de la largeur du carousel */
+}
+.carousel-item img {
+    width: 100%; // Ensure the image fills the width of its container
+    height: auto; // Maintain the aspect ratio
+    max-height: 750px; // Adjust this value according to your design requirements
+  }
+  
+>>>>>>> f42ae3051736fb46935dfcdc8251d91ade8f90d3

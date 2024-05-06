@@ -1,23 +1,10 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Component } from '@angular/core';
 
-import { AllTemplateBackComponent } from './all-template-back.component';
+@Component({
+  selector: 'app-all-template-back',
+  templateUrl: './all-template-back.component.html',
+  styleUrls: ['./all-template-back.component.scss']
+})
+export class AllTemplateBackComponent {
 
-describe('AllTemplateBackComponent', () => {
-  let component: AllTemplateBackComponent;
-  let fixture: ComponentFixture<AllTemplateBackComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ AllTemplateBackComponent ]
-    })
-    .compileComponents();
-
-    fixture = TestBed.createComponent(AllTemplateBackComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+}
