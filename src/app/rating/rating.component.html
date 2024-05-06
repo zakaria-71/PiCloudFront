@@ -1,0 +1,8 @@
+<h1> Rate us </h1>
+<ngb-rating [max]="5" (click)="getRating()" [formControl]="ratingControl"></ngb-rating>
+
+
+<h1> You did it yeeey </h1>
+<ngb-rating [max]="5" [rate]="finalRating" [readonly]="true"></ngb-rating>
+
+<h2>{{finalRating}}</h2>

@@ -20,6 +20,7 @@ import { DetailsTComponent } from './terrain/details-t/details-t.component';
 import { EditRComponent } from './reservation-t/edit-r/edit-r.component';
 import { EditTComponent } from './terrain/edit-t/edit-t.component';
 import { MyreservationsTComponent } from './reservation-t/myreservations-t/myreservations-t.component';
+import { RatingComponent } from './rating/rating.component';
 
 
 const routes: Routes = [
@@ -50,7 +51,8 @@ const routes: Routes = [
   {path:"terrains/more/:idTerrain",component:DetailsTComponent},
   {path:"reservationTs/edit/:idResT",component:EditRComponent},
   {path:"terrains/edit/:idTerrain",component:EditTComponent},
-  {path:"myReservations",component:MyreservationsTComponent}
+  {path:"myReservations",component:MyreservationsTComponent},
+  {path:"reservation/rate",component:RatingComponent}
 ];
 
 @NgModule({

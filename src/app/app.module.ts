@@ -32,6 +32,8 @@ import { EditRComponent } from './reservation-t/edit-r/edit-r.component';
 import { EditTComponent } from './terrain/edit-t/edit-t.component';
 import { ListReservationsComponent } from './reservation-t/list-reservations/list-reservations.component';
 import { MyreservationsTComponent } from './reservation-t/myreservations-t/myreservations-t.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { RatingComponent } from './rating/rating.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +64,7 @@ import { MyreservationsTComponent } from './reservation-t/myreservations-t/myres
     EditTComponent,
     ListReservationsComponent,
     MyreservationsTComponent,
+    RatingComponent,
   ],
   imports: [
     BrowserModule,
@@ -70,7 +73,7 @@ import { MyreservationsTComponent } from './reservation-t/myreservations-t/myres
     FormsModule,
     ReactiveFormsModule,ToastrModule.forRoot({
       positionClass: 'toast-bottom-right'
-    }),
+    }), NgbModule,
 
   ],
   providers: [

@@ -39,5 +39,11 @@ export class ReservationTService {
   getReservationByTerrain(idTerrain:number):Observable<ReservationT[]>{
     return this.http.get<ReservationT[]>(this.baseUrl+'/reservationTs/terrain/'+idTerrain);
   }
+
+  //rating
+
+  addRating(idUser:any,data:any):Observable<any>{
+    return this.http.post(this.baseUrl+'/addRating/'+idUser,data);
+  }
   
 }

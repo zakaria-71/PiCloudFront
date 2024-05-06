@@ -1,5 +1,6 @@
 import { Terrain } from "./Terrain";
 import { Etat } from "./Etats";
+import { User } from "./User";
 
 export class ReservationT{
     idResT?:number;
@@ -8,6 +9,7 @@ export class ReservationT{
     etat!: Etat;
     nbre?: number;
     terrain!:Terrain;
+    User?: User;
 
 
 }
