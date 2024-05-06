@@ -1,0 +1,42 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Ensure the wrapper takes up the full height of the viewport */
+  }
+  
+  .container {
+    display: flex;
+    flex: 1;
+  }
+  
+  .content {
+    width: 100%;
+    max-width: 800px; /* Adjust the maximum width of the table as needed */
+    margin: 20px auto; /* Center the table horizontally and provide space from the navbar */
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  app-navbar-back {
+    flex: 0;
+  }
+  app-sidebar-back {
+    position: absolute; /* Set absolute positioning to position the sidebar */
+    top: 0; /* Position the sidebar at the top */
+    left: 0; /* Position the sidebar at the right */
+    z-index: 2; /* Ensure the sidebar is above the table */
+  }
+  

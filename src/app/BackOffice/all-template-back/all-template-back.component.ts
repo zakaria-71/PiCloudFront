@@ -1,11 +1,16 @@
+<<<<<<< HEAD
 import {Component, OnInit} from '@angular/core';
 import {ScriptLoaderService} from "../../services/script-loader.service";
+=======
+import { Component } from '@angular/core';
+>>>>>>> origin/main
 
 @Component({
   selector: 'app-all-template-back',
   templateUrl: './all-template-back.component.html',
   styleUrls: ['./all-template-back.component.scss']
 })
+<<<<<<< HEAD
 export class AllTemplateBackComponent implements OnInit{
 
   constructor(private scriptLoaderService: ScriptLoaderService) { }
@@ -36,4 +41,8 @@ export class AllTemplateBackComponent implements OnInit{
         console.error('Error loading scripts:', error);
       });
   }
+=======
+export class AllTemplateBackComponent {
+
+>>>>>>> origin/main
 }

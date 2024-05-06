@@ -1,0 +1,24 @@
+<div class="container-fluid">
+  <div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Liste des Compétitions</h1>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4 mb-4" *ngFor="let i of filteredTeams">
+      <div class="card shadow">
+        <div class="card-header py-3">
+          <h6 class="m-0 font-weight-bold text-primary">{{ i.nom }}</h6>
+        </div>
+        <div class="card-body">
+          <p class="card-text">Identifiant: {{ i.competitionId }}</p>
+          <p class="card-text">Catégorie: {{ i.categorie }}</p>
+          <p class="card-text">Date Début: {{ i.dateDebut | date:'MMM d, y H:mm' }}</p>
+          <table>
+            <img [src]="i.qrcode"  height="75px" alt="QR Code">
+          </table>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
