@@ -1,10 +1,12 @@
-<<<<<<< HEAD
+ 
 import { Component } from '@angular/core';
-=======
+ 
 import { Component, OnInit } from '@angular/core';
 import { JwtService } from './service/jwt.service';
 import { Router } from '@angular/router';
->>>>>>> origin/main
+ 
+import { Component } from '@angular/core';
+ 
 
 @Component({
   selector: 'app-root',
@@ -12,10 +14,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-<<<<<<< HEAD
+ 
   title = 'edusched';
-=======
+ 
 
   
->>>>>>> origin/main
+ 
+  title = 'edusched';
+ 
 }
