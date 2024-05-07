@@ -20,8 +20,8 @@ export class AddTComponent {
     this.terrainForm=this.fb.group({
       name:['',[Validators.required]],
       description:[null,[Validators.required]],
-     // latitude:['',[Validators.required]],
-      //longitude:['',[Validators.required]]
+      latitude:['',[Validators.required]],
+      longitude:['',[Validators.required]]
     });
   }
   saveTerrain():void{
@@ -29,8 +29,8 @@ export class AddTComponent {
       const terrain : Terrain={
         name: this.terrainForm.value.name ,
         description: this.terrainForm.value.description ,
-        //latitude: parseFloat(this.terrainForm.value.latitude),
-        //longitude: parseFloat(this.terrainForm.value.longitude)
+        latitude: parseFloat(this.terrainForm.value.latitude),
+        longitude: parseFloat(this.terrainForm.value.longitude)
 
       };
       this.terrainService
