@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { HttpClientModule, provideHttpClient } from '@angular/common/http'; // Import HttpClientModule
+import { HttpClientModule, provideHttpClient } from '@angular/common/http'; 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,15 +13,6 @@ import { AllTemplateFrontComponent } from './FrontOffice/all-template-front/all-
 import { FooterFrontComponent } from './FrontOffice/footer-front/footer-front.component';
 import { HeadrerFrontComponent } from './FrontOffice/headrer-front/headrer-front.component';
 import { BodyComponent } from './FrontOffice/body/body.component';
-import {CompetitionComponent} from "./BackOffice/gestion competition/competition/competition.component";
-import {AddComponent} from "./BackOffice/gestion competition/competition/add/add.component";
-import {EditComponent} from "./BackOffice/gestion competition/competition/edit/edit.component";
-import {TeamComponent} from "./BackOffice/gestion competition/team/team.component";
-import {AddtComponent} from "./BackOffice/gestion competition/team/addt/addt.component";
-import {EdittComponent} from "./BackOffice/gestion competition/team/editt/editt.component";
-import {DetailsComponent} from "./BackOffice/gestion competition/competition/details/details.component";
-import {VoteComponent} from "./BackOffice/gestion competition/vote/vote.component";
-import {CalendarComponent} from "./BackOffice/gestion competition/calendar/calendar.component";
 import {ToastrModule} from "ngx-toastr";
 import { TerrainComponent } from './terrain/terrain.component';
 import { ReservationTComponent } from './reservation-t/reservation-t.component';
@@ -35,10 +27,9 @@ import { MyreservationsTComponent } from './reservation-t/myreservations-t/myres
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RatingComponent } from './reservation-t/rating/rating.component';
 import { ChartComponent } from './reservation-t/chart/chart.component';
-import { TerrainDetailComponent } from './terrain-detail/terrain-detail.component';
+import { TerrainDetailComponent } from './terrain/terrain-detail/terrain-detail.component';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
-import { AddUComponent } from './add-u/add-u.component';
-
+import { AddUComponent } from './reservation-t/add-u/add-u.component';
 @NgModule({
   declarations: [
     TerrainDetailComponent,
@@ -50,15 +41,6 @@ import { AddUComponent } from './add-u/add-u.component';
     FooterFrontComponent,
     HeadrerFrontComponent,
     BodyComponent,
-    CompetitionComponent,
-    AddComponent,
-    EditComponent,
-    TeamComponent,
-    AddtComponent,
-    EdittComponent,
-    DetailsComponent,
-    VoteComponent,
-    CalendarComponent,
     TerrainComponent,
     ReservationTComponent,
     AddTComponent,
@@ -78,10 +60,12 @@ import { AddUComponent } from './add-u/add-u.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
     FormsModule,
     ReactiveFormsModule,ToastrModule.forRoot({
       positionClass: 'toast-bottom-right'
-    }), NgbModule,
+    }), 
+    NgbModule,
     LeafletModule
   ],
   providers: [

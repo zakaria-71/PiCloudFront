@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { LeafletDirective } from '@asymmetrik/ngx-leaflet';
 import {latLng, tileLayer, marker, Marker} from 'leaflet';
 import * as L from 'leaflet';
-import { TerrainService } from '../services/terrain.service';
-import { Terrain } from '../entities/Terrain';
+import { TerrainService } from '../../services/terrain.service';
+import { Terrain } from '../../entities/Terrain';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 

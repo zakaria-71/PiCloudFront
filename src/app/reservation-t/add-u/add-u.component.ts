@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ReservationTService } from '../services/reservation-t.service';
-import { TerrainService } from '../services/terrain.service';
-import { ReservationT } from '../entities/ReservationT';
-import { Etat } from '../entities/Etats';
+import { ReservationTService } from '../../services/reservation-t.service';
+import { TerrainService } from '../../services/terrain.service';
+import { ReservationT } from '../../entities/ReservationT';
+import { Etat } from '../../entities/Etats';
 
 @Component({
   selector: 'app-add-u',
