@@ -25,16 +25,17 @@
             </tr>
             </thead>
             <tbody>
-            <tr *ngFor="let reservationT of reservationTs">
-
-                <td> {{ reservationT.date_debut | date:'MMM d, y H:mm'}}</td>
-                <td> {{ reservationT.date_fin | date:'MMM d, y H:mm'}}</td>
-                <td>{{reservationT.nbre}}</td>  
-                <td *ngIf="reservationT.terrain ; else noTerrain">{{ reservationT.terrain.name| json }}</td>
-              <ng-template #noTerrain>
-                <td>"Pas de terrain"</td>
-              </ng-template>
-            </tr>
+              <tr *ngFor="let reservationT of reservationTs">
+                <td>{{ reservationT.date_debut | date:'MMM d, y H:mm' }}</td>
+                <td>{{ reservationT.date_fin | date:'MMM d, y H:mm' }}</td>
+                <td>{{ reservationT.nbre }}</td>
+                <td *ngIf="reservationT.terrain; else noTerrain">
+                  <a [routerLink]="['/terrain-detail/', reservationT.terrain.idTerrain]">{{ reservationT.terrain.name }}</a>
+                </td>
+                <ng-template #noTerrain>
+                  <td>"Pas de terrain"</td>
+                </ng-template>
+              </tr>
             </tbody>
           </table>
         </div>

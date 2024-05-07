@@ -35,9 +35,12 @@ import { MyreservationsTComponent } from './reservation-t/myreservations-t/myres
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RatingComponent } from './reservation-t/rating/rating.component';
 import { ChartComponent } from './reservation-t/chart/chart.component';
+import { TerrainDetailComponent } from './terrain-detail/terrain-detail.component';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
 @NgModule({
   declarations: [
+    TerrainDetailComponent,
     AppComponent,
     AllTemplateBackComponent,
     NavbarBackComponent,
@@ -66,7 +69,8 @@ import { ChartComponent } from './reservation-t/chart/chart.component';
     ListReservationsComponent,
     MyreservationsTComponent,
     RatingComponent,
-    ChartComponent
+    ChartComponent,
+    TerrainDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -76,7 +80,7 @@ import { ChartComponent } from './reservation-t/chart/chart.component';
     ReactiveFormsModule,ToastrModule.forRoot({
       positionClass: 'toast-bottom-right'
     }), NgbModule,
-
+    LeafletModule
   ],
   providers: [
     provideHttpClient()

@@ -12,6 +12,7 @@ export class DetailsTComponent implements OnInit {
   terrain:any;
 
   ngOnInit(): void {
+    
     this.id = this.route.snapshot.params['idTerrain'];
     this.terrainService.getTerrainById(this.id).subscribe(
       data => {
