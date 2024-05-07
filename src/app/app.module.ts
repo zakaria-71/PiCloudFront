@@ -35,8 +35,6 @@ import { MyreservationsTComponent } from './reservation-t/myreservations-t/myres
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RatingComponent } from './reservation-t/rating/rating.component';
 import { ChartComponent } from './reservation-t/chart/chart.component';
-//import { ResChartComponent } from './res-chart/res-chart.component';
-//import { TerrainChartComponent } from './terrain-chart/terrain-chart.component';
 
 @NgModule({
   declarations: [
@@ -68,9 +66,7 @@ import { ChartComponent } from './reservation-t/chart/chart.component';
     ListReservationsComponent,
     MyreservationsTComponent,
     RatingComponent,
-    ChartComponent,
-    //ResChartComponent,
-    //TerrainChartComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,
