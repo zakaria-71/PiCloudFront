@@ -17,6 +17,8 @@ import { LoginComponent } from './components/user/login/login.component';
 import { ProfilComponent } from './components/user/profil/profil.component';
 import { ProfilEditComponent } from './components/user/profil-edit/profil-edit.component';
 import { RegisterComponent } from './components/user/register/register.component';
+import { NgSelectModule } from '@ng-select/ng-select';
+
 
 
 @NgModule({
@@ -34,13 +36,15 @@ import { RegisterComponent } from './components/user/register/register.component
     ProfilComponent,
     ProfilEditComponent,
     RegisterComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    NgSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

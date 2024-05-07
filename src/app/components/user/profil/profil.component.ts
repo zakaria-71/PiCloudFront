@@ -5,7 +5,12 @@ interface User {
   name: string;
   email: string;
   image: string; 
-  isAdmin: boolean
+  isAdmin: boolean,
+  enumClasse: string; // Add enumClasse property
+  enumSpecialite: string; // Add enumSpecialite property
+  number: string; // Add number property
+  nationality: string; // Add nationality property
+  creationDay:Date;
 }
 @Component({
   selector: 'app-profil',
@@ -19,7 +24,12 @@ export class ProfilComponent implements OnInit{
     name: '',
     email: '',
     image: null, // Initialize image property to null
-    isAdmin:false
+    isAdmin:false,
+    enumClasse: '',
+    enumSpecialite: '',
+    number: '',
+    nationality: '',
+    creationDay:  new Date()
   };
 
   imageUrl: SafeUrl | null=null;
@@ -37,6 +47,8 @@ export class ProfilComponent implements OnInit{
       (response) => {
         // Assuming the response contains user data including the image URL
         this.user = response;
+        // Assuming CreationDay is a string in the format "2024-05-04T23:00:00.000+00:00"
+        this.user.creationDay = new Date(response.creationDate);
         this.user.isAdmin=this.service.isAdmin()
         if (this.user && this.user.image) {
         const imageBlob = this.b64toBlob(this.user.image);
