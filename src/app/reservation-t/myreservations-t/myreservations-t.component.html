@@ -3,6 +3,7 @@
       <div class="input-group">
         <input type="text" name="typeMat" class="form-control bg-light border-0 small" placeholder="Rechercher ..">
       </div>
+      <a routerLink="/reservation/rate" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus-circle"></i> Rate Us </a>
     </form>
   </div>
   
@@ -21,6 +22,7 @@
                 <th> Date fin</th>
                 <th>nombre de places</th>     
                 <th> Terrain</th>
+                <th>Action</th>
                 
             </tr>
             </thead>
@@ -35,6 +37,10 @@
                 <ng-template #noTerrain>
                   <td>"Pas de terrain"</td>
                 </ng-template>
+                <td>
+                  <a (click)="delete(reservationT.idResT)" class="btn btn-danger btn-circle btn-sm"style="margin-right: 5px;color: white"><i class="fas fa-trash">Annuler</i></a>
+
+                </td>
               </tr>
             </tbody>
           </table>

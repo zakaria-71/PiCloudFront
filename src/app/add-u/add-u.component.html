@@ -1,0 +1,58 @@
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+  <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+    <div class="input-group">
+      <input type="text" name="typeMat" class="form-control bg-light border-0 small" placeholder="Rechercher ..">
+    </div>
+  </form>
+</div>
+<div class="container-fluid">
+  <div class="card shadow mb-4">
+    <div class="card-body">
+      <h6 class="m-0 font-weight-bold text-primary">Ajouter une réservation</h6>
+    </div>
+    <div class="card-body justify-content">
+      <form *ngIf="!submitted" (ngSubmit)="saveReservation()" [formGroup]="reservationTForm" novalidate>
+        <div >
+
+
+          <div class=".col-md-6 .offset-md-3">
+            <label for="date_debut" class="form-label">Date de début</label>
+            <input type="date" class="form-control" id="date_debut" formControlName="date_debut" required >
+            <small><div *ngIf="reservationTForm.get('date_debut')?.errors?.['required']" class="text-danger">Champ obligatoire</div></small>
+          </div>
+        </div>
+        <hr class="sidebar-divider">
+        <div class=".col-md-6 .offset-md-3">
+          <label for="date_fin" class="form-label">Date de fin</label>
+          <input type="date" class="form-control" id="date_fin" formControlName="date_fin" required >
+          <small><div *ngIf="reservationTForm.get('date_fin')?.errors?.['required']" class="text-danger">Champ obligatoire</div></small>
+        </div>
+        <hr class="sidebar-divider">
+        <div class=".col-md-6 .offset-md-3">
+         <label for="nbre" class="form-label">Nombre de places disponibles</label>
+         <input type="text" class="form-control" id="nbre" formControlName="nbre" required>
+         <small><div *ngIf="reservationTForm.get('nbre')?.errors?.['required']" class="text-danger">Champ obligatoire</div></small>
+        </div>
+        <div >
+            <div>
+              <hr class="sidebar-divider">
+                <div class=".col-md-6 .offset-md-3">
+                  <label for="terrain" class="form-label">Terrain</label>
+                  <select name="terrain" class="form-control" id="terrain" formControlName="terrain" required>
+                    <option *ngFor="let terrain of terrainValues" [value]="terrain.name">{{ terrain.name }}</option>
+                  </select>
+                  <small>
+                    <div *ngIf="reservationTForm.get('terrain')?.errors?.['required']" class="text-danger">Champ obligatoire.</div>
+                  </small>
+                </div>
+              </div>
+  <br>
+        <div class="col-md-6" style="margin-left:250px">
+            <button type="submit" class="btn btn-dark btn-block text-white"> Ajouter réservation </button>
+          </div>
+  
+        </div>
+        </form>
+      </div>
+    </div>
+  

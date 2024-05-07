@@ -37,6 +37,7 @@ import { RatingComponent } from './reservation-t/rating/rating.component';
 import { ChartComponent } from './reservation-t/chart/chart.component';
 import { TerrainDetailComponent } from './terrain-detail/terrain-detail.component';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { AddUComponent } from './add-u/add-u.component';
 
 @NgModule({
   declarations: [
@@ -70,8 +71,9 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
     MyreservationsTComponent,
     RatingComponent,
     ChartComponent,
-    TerrainDetailComponent
-  ],
+    TerrainDetailComponent,
+    AddUComponent
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,

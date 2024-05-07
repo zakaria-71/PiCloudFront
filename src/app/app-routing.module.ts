@@ -23,6 +23,8 @@ import { MyreservationsTComponent } from './reservation-t/myreservations-t/myres
 import { RatingComponent } from './reservation-t/rating/rating.component';
 import { ChartComponent } from './reservation-t/chart/chart.component';
 import { TerrainDetailComponent } from './terrain-detail/terrain-detail.component';
+import { AddUComponent } from './add-u/add-u.component';
+import { HeadrerFrontComponent } from './FrontOffice/headrer-front/headrer-front.component';
 
 
 const routes: Routes = [
@@ -56,7 +58,9 @@ const routes: Routes = [
   {path:"myReservations",component:MyreservationsTComponent},
   {path:"reservation/rate",component:RatingComponent},
   {path:"reservationTs/chart",component:ChartComponent},
-  {path: "terrain-detail/:idTerrain", component: TerrainDetailComponent}
+  {path: "terrain-detail/:idTerrain", component: TerrainDetailComponent},
+  {path:"reserver/:idUser", component:AddUComponent},
+  {path:"return",component:HeadrerFrontComponent}
 ];
 
 @NgModule({

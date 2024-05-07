@@ -23,5 +23,13 @@ export class MyreservationsTComponent implements OnInit{
     });
 
 }
+delete(idResT:any){
+  this.reservationService.deleteReservationT(idResT).subscribe(
+    data=>{
+      window.location.reload();
+      alert("La réservation a été supprimée avec succés");
+    }
+  )
+}
 
 }

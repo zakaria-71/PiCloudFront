@@ -60,4 +60,7 @@ export class ReservationTService {
   getRatings(): Observable<Rating[]>{
     return this.http.get<Rating[]>(this.baseUrl+'/findAllRatings');
   }
+  reserver(data:any,idUser:any):Observable<any>{
+    return this.http.post(this.baseUrl+'/addReservation/'+idUser,data);
+  }
 }
