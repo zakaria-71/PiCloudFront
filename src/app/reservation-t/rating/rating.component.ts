@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { ReservationT } from '../entities/ReservationT';
-import { ReservationTService } from '../services/reservation-t.service';
+import { ReservationT } from '../../entities/ReservationT';
+import { ReservationTService } from '../../services/reservation-t.service';
 import { Router } from '@angular/router';
-import { User } from '../entities/User';
-import { Rating } from '../entities/Rating';
+import { User } from '../../entities/User';
+import { Rating } from '../../entities/Rating';
 
 @Component({
   selector: 'app-rating',

@@ -22,6 +22,7 @@
     "@ng-bootstrap/ng-bootstrap": "^14.2.0",
     "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.3.3",
+    "chart.js": "^4.4.2",
     "daypilot-pro-angular": "https://npm.daypilot.org/daypilot-pro-angular/trial/2020.4.4807.tar.gz",
     "fullcalendar": "^6.1.11",
     "ngx-toastr": "^13.2.1",

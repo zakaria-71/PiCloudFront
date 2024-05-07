@@ -33,7 +33,10 @@ import { EditTComponent } from './terrain/edit-t/edit-t.component';
 import { ListReservationsComponent } from './reservation-t/list-reservations/list-reservations.component';
 import { MyreservationsTComponent } from './reservation-t/myreservations-t/myreservations-t.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { RatingComponent } from './rating/rating.component';
+import { RatingComponent } from './reservation-t/rating/rating.component';
+import { ChartComponent } from './reservation-t/chart/chart.component';
+//import { ResChartComponent } from './res-chart/res-chart.component';
+//import { TerrainChartComponent } from './terrain-chart/terrain-chart.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +68,9 @@ import { RatingComponent } from './rating/rating.component';
     ListReservationsComponent,
     MyreservationsTComponent,
     RatingComponent,
+    ChartComponent,
+    //ResChartComponent,
+    //TerrainChartComponent,
   ],
   imports: [
     BrowserModule,

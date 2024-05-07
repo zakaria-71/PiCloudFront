@@ -3,6 +3,7 @@ import { ReservationT } from '../entities/ReservationT';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../entities/User';
+import { Rating } from '../entities/Rating';
 @Injectable({
   providedIn: 'root'
 })
@@ -45,5 +46,18 @@ export class ReservationTService {
   addRating(idUser:any,data:any):Observable<any>{
     return this.http.post(this.baseUrl+'/addRating/'+idUser,data);
   }
-  
+
+  getAbove(): any{
+    return this.http.get<number>(this.baseUrl+'/rating/above');
+  }
+  getBelow(): any{
+    return this.http.get<number>(this.baseUrl+'/rating/below');
+  }
+  getCount():any{
+    return this.http.get<ReservationT[]>(this.baseUrl+'/rating/count');
+
+  }
+  getRatings(): Observable<Rating[]>{
+    return this.http.get<Rating[]>(this.baseUrl+'/findAllRatings');
+  }
 }

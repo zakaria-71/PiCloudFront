@@ -23,8 +23,12 @@
           <tr>
               <th> Name</th>
               <th> Description</th>
+
+              <!--
               <th> latitude</th>
               <th> longitude</th>
+
+              -->
 
 
               <th>Action</th>
@@ -33,12 +37,14 @@
           <tbody>
           <tr *ngFor="let terrain of terrains">
             <!--
-              <td> {{ terrain.idTerrain}}</td>
+              <td> {{ terrain.idTerrain}}
+                <td> {{ terrain.latitude}}</td>
+              <td> {{ terrain.longitude}}</td>
+              </td>
               -->
               <td> {{ terrain.name}}</td>
               <td> {{ terrain.description}}</td>
-              <td> {{ terrain.latitude}}</td>
-              <td> {{ terrain.longitude}}</td>
+              
 
             <td>
               <a (click)="delete(terrain.idTerrain)" class="btn btn-danger btn-circle btn-sm"style="margin-right: 5px;color: white"><i class="fas fa-trash"></i></a>

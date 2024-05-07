@@ -36,8 +36,8 @@ export class EditTComponent {
     this.terrainForm = this.fb.group({
       name: [this.terrain.name, Validators.required],
       description: [this.terrain.description, Validators.required],
-      latitude: [this.terrain.latitude, Validators.required],
-      longitude: [this.terrain.longitude, Validators.required]
+      //latitude: [this.terrain.latitude, Validators.required],
+      //longitude: [this.terrain.longitude, Validators.required]
 
 
         });
@@ -65,8 +65,8 @@ export class EditTComponent {
       const data: Terrain={
         name: this.terrainForm.value.name ,
         description: this.terrainForm.value.description,
-        latitude: parseFloat(this.terrainForm.value.latitude),
-        longitude: parseFloat(this.terrainForm.value.longitude)
+        //latitude: parseFloat(this.terrainForm.value.latitude),
+        //longitude: parseFloat(this.terrainForm.value.longitude)
 
       };
       this.terrainService.updateTerrain(idTerrain,data).subscribe(

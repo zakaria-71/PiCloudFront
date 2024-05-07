@@ -11,13 +11,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class MyreservationsTComponent implements OnInit{
   reservationTs!: ReservationT[];
-  id:any;
+  id=3;
   user!:User;
   constructor(private reservationService:ReservationTService, private router:Router){
 
   }
   ngOnInit():void{
-    this.reservationService.getReservationsByUser(1).subscribe((data:ReservationT[])=>{
+    this.reservationService.getReservationsByUser(this.id).subscribe((data:ReservationT[])=>{
       console.log(data);
       this.reservationTs=data;
     });
