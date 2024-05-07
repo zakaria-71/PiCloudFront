@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {CompetitionService} from "../../services/competition.service";
 import {Competition} from "../../models/competition.model";
 import {TeamService} from "../../services/team.service";
 import {Team} from "../../models/team.model";
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-addt',
