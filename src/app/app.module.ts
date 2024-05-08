@@ -35,6 +35,15 @@ import { TeamssComponent } from './FrontOffice/teamss/teamss.component';
 import { HomeComponent } from './BackOffice/home/home.component';
 import { CalendarrComponent } from './FrontOffice/calendarr/calendarr.component';
 import {NgChartsModule} from "ng2-charts";
+import { ReservationComponent } from './components/reservationClasse/reservation/reservation.component';
+import { ClassComponent } from './components/reservationClasse/class/class.component';
+import { ReservationbackComponent } from './components/reservationClasse/reservationback/reservationback.component';
+import { BlocComponent } from './components/reservationClasse/bloc/bloc.component';
+import { Chart } from 'chart.js';
+import { CalendarResComponent } from './components/reservationClasse/reservation/calendarRes/calendarRes.component';
+import { RouterLink, RouterModule } from '@angular/router';
+import { CalendarModule } from 'angular-calendar';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -64,6 +73,13 @@ import {NgChartsModule} from "ng2-charts";
     TeamssComponent,
     HomeComponent,
     CalendarrComponent,
+    ReservationComponent,
+    ClassComponent,
+    ReservationbackComponent,
+    BlocComponent,
+    ReservationComponent,
+   CalendarResComponent
+
   ],
   imports: [
     BrowserModule,
@@ -73,12 +89,21 @@ import {NgChartsModule} from "ng2-charts";
     FormsModule,
     NgChartsModule,
     BrowserAnimationsModule,
+    RouterModule ,
+    RouterLink,
+    CommonModule,
+    CalendarModule,
     ReactiveFormsModule,ToastrModule.forRoot({
       positionClass: 'toast-bottom-right',
 
     }),
+    
+    
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [CommonModule, CalendarModule, HttpClientModule]
+
 })
+
 export class AppModule { }

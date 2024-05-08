@@ -1,0 +1,253 @@
+<!-- reservation.component.html -->
+<!-- ***** Header Area Start ***** -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <title>Villa Agency - Real Estate HTML5 Template</title>
+  <!-- Bootstrap core CSS -->
+  <link href="/assets/FrontOffice/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="/assets/FrontOffice/assets/css/fontawesome.css">
+  <link rel="stylesheet" href="/assets/FrontOffice/assets/css/templatemo-villa-agency.css">
+  <link rel="stylesheet" href="/assets/FrontOffice/assets/css/owl.css">
+  <link rel="stylesheet" href="/assets/FrontOffice/assets/css/animate.css">
+  <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+  <!--
+  /* styles.css */
+.reservation-form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.reservation-form h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+input[type="date"],
+input[type="time"],
+input[type="number"],
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+input[type="date"]:focus,
+input[type="time"]:focus,
+input[type="number"]:focus,
+input[type="text"]:focus {
+  outline: none;
+  border-color: #6cb2eb;
+}
+
+.btn-primary {
+  background-color: #6cb2eb;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 20px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #4a90e2;
+}
+  TemplateMo 591 villa agency
+
+  https://templatemo.com/tm-591-villa-agency
+
+  -->
+</head>
+
+
+<body>
+
+<app-headrer-front></app-headrer-front>
+<script src="/assets/FrontOffice/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/FrontOffice/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="/assets/FrontOffice/assets/js/isotope.min.js"></script>
+<script src="/assets/FrontOffice/assets/js/owl-carousel.js"></script>
+<script src="/assets/FrontOffice/assets/js/counter.js"></script>
+<script src="/assets/FrontOffice/assets/js/custom.js"></script>
+<style>
+ 
+/* Updated styles with better colors and centered form */
+
+.reservation-form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 16px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.reservation-form h2 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  color: #333;
+  font-size: 24px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #555;
+}
+
+.form-control {
+  font-size: 14px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.btn-primary {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #45a049;
+}
+
+.reservation-list {
+  margin-top: 30px;
+}
+
+.reservation-list h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.reservation-info {
+  font-size: 16px;
+}
+</style>
+</body>
+</html>
+<!-- Reservation Form -->
+<!-- Reservation Form -->
+<div class="reservation-form">
+  <h2>Add Reservation</h2>
+  <form #reservationForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="startd">Start Date:</label>
+      <input type="date" class="form-control" id="startd" name="startd" [(ngModel)]="newReservation.startd" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="startHour">Start Time:</label>
+      <input type="time" class="form-control" id="startHour" name="startHour" [(ngModel)]="newReservation.startHour" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="finalHour">Final Time:</label>
+      <input type="time" class="form-control" id="finalHour" name="finalHour" [(ngModel)]="newReservation.finalHour" required>
+    </div>
+    <div class="form-group">
+      <label for="finald">Final Date:</label>
+      <input type="date" class="form-control" id="finald" name="finald" [(ngModel)]="newReservation.finald" required>
+    </div>
+    <div class="form-group">
+      <label for="classId">Class ID:</label>
+      <input type="number" class="form-control" id="classId" name="classId" [(ngModel)]="newReservation.classId" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Reservation</button>
+  </form>
+</div>
+
+<!-- Reservation List -->
+<div class="reservation-list">
+  <h2>Reservation List</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Start Date</th>
+        <th>Start Time</th>
+        <th>Final Time</th>
+        <th>Final Date</th>
+        <th>State</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let reservation of reservations">
+        <td>{{ reservation.startd | date:'shortDate' }}</td>
+        <td>{{ reservation.startHour }}</td>
+        <td>{{ reservation.finalHour }}</td>
+        <td>{{ reservation.finald | date:'shortDate' }}</td>
+        <td [ngClass]="{'confirmed-state': reservation.state === 'confirmed', 'unconfirmed-state': reservation.state === 'unconfirmed'}">
+          {{ reservation.state }}
+        </td>
+        <td>
+          <button (click)="editReservation(reservation)">Edit</button>
+          <button (click)="removeReservation(reservation.idR)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div *ngIf="isVisibleUpdateForm">
+  <h2>Update Reservation</h2>
+  <!-- <form [formGroup]="reservationForm" (ngSubmit)="updateReservation(currentReservation?.idR)"> -->
+    <form  (ngSubmit)="updateReservation(currentReservation?.idR)">
+    <div>
+      <label for="startd">Start Date:</label>
+      <input type="date" formControlName="startd">
+    </div>
+    <div>
+      <label for="startHour">Start Hour:</label>
+      <input type="time" formControlName="startHour">
+    </div>
+    <div>
+      <label for="finalHour">Final Hour:</label>
+      <input type="time" formControlName="finalHour">
+    </div>
+    <div>
+      <label for="finald">Final Date:</label>
+      <input type="date" formControlName="finald">
+    </div>
+ 
+    <!-- Add other ReservationC fields as needed -->
+    <button type="submit" class="btn btn-primary">Update</button>
+    <button (click)="closeForm()" class="btn btn-warning">Cancel</button>
+  </form>
+</div>
+</div>

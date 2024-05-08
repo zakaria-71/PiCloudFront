@@ -21,11 +21,14 @@ import {TeamssComponent} from "./FrontOffice/teamss/teamss.component";
 import {BodyComponent} from "./FrontOffice/body/body.component";
 import {HomeComponent} from "./BackOffice/home/home.component";
 import {CalendarrComponent} from "./FrontOffice/calendarr/calendarr.component";
+import { ReservationComponent } from './components/reservationClasse/reservation/reservation.component';
+import { CalendarResComponent } from './components/reservationClasse/reservation/calendarRes/calendarRes.component';
 
 
 const routes: Routes = [
 
   {path:"",component:AllTemplateFrontComponent,
+
      children:[
     {
        path:"competitionss", component:CompetitionssComponent
@@ -34,8 +37,10 @@ const routes: Routes = [
        {
          path:'',component:BodyComponent
        },
-       { path : 'calendarr', component:CalendarrComponent }
+       { path : 'calendarr', component:CalendarrComponent },
+
      ]
+     
   },
   {path:"admin",component:AllTemplateBackComponent, canActivate: [AdminGuard],
     children:[
@@ -54,7 +59,11 @@ const routes: Routes = [
   { path: "login", component: LoginComponent },
   { path: "dashboard", component: DashboardComponent,canActivate: [AdminGuard] },
   { path: "profil", component: ProfilComponent },
-  { path: "profil-edit", component: ProfilEditComponent }
+  { path: "profil-edit", component: ProfilEditComponent },
+  {path:'reservationc',component:ReservationComponent},
+  {path:'reservationCalander',component:  CalendarResComponent}
+
+
 
 ];
 
