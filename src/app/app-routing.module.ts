@@ -23,6 +23,8 @@ import {HomeComponent} from "./BackOffice/home/home.component";
 import {CalendarrComponent} from "./FrontOffice/calendarr/calendarr.component";
 import { ReservationComponent } from './components/reservationClasse/reservation/reservation.component';
 import { CalendarResComponent } from './components/reservationClasse/reservation/calendarRes/calendarRes.component';
+import { UserStatComponent } from './user-stat-component/user-stat-component.component';
+
 
 
 const routes: Routes = [
@@ -53,6 +55,7 @@ const routes: Routes = [
       { path: 'teams/ajouterTeam', component: AddtComponent },
       { path: 'teams/editt/:idTeam',component:EdittComponent},
       { path : 'calendar', component:CalendarComponent },
+      
 
     ]
   },{ path: "register", component: RegisterComponent },
@@ -61,10 +64,8 @@ const routes: Routes = [
   { path: "profil", component: ProfilComponent },
   { path: "profil-edit", component: ProfilEditComponent },
   {path:'reservationc',component:ReservationComponent},
-  {path:'reservationCalander',component:  CalendarResComponent}
-
-
-
+  {path:'reservationCalander',component:  CalendarResComponent},
+  {path:'UserStatComponent',component:UserStatComponent}
 ];
 
 @NgModule({

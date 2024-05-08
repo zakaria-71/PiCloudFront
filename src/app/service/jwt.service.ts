@@ -1,14 +1,24 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 
 const BASE_URL = ["http://localhost:9090/"]
+
+interface BanRequest {
+  email: string;
+  banDurationInDays: number;
+}
+export interface RegistrationStat {
+  month: string;
+  count: number;
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class JwtService {
+  
 
   constructor(private http: HttpClient, private router: Router) { }
   register(signupRequest: any): Observable<any> {
@@ -33,6 +43,39 @@ export class JwtService {
     return this.http.get(BASE_URL + 'api/list', {
       headers: this.createAuhtorizationHeader()
     })
+  }
+  banUser(bodyBan:BanRequest): Observable<void> {
+    return this.http.post<void>(`${BASE_URL}api/ban`, bodyBan, {
+      headers: this.createAuhtorizationHeader()
+    });
+  }
+
+  unbanUser(email: string): Observable<void> {
+    return this.http.post<void>(`${BASE_URL}api/unban`,email, {
+      headers: this.createAuhtorizationHeader()
+    });
+  }
+
+  isUserBanned(email: string): Observable<boolean> {
+    return this.http.get<boolean>(`${BASE_URL}api/is-banned?email=${email}`, {
+      headers: this.createAuhtorizationHeader()
+    });
+  }
+  getUserRegistrationStats(): Observable<RegistrationStat[]> {
+    const headers = this.createAuhtorizationHeader();
+    return this.http.get<any[]>(`${BASE_URL}api/user-registration-stats`, {headers})
+      .pipe(
+        map(response => response.map(item => ({
+          month: item[0],
+          count: item[1]
+        } as RegistrationStat)))
+      );
+  }
+  getIdUserByEmail():Observable<any>{
+    const email= localStorage.getItem('email');
+    return this.http.get(`${BASE_URL}api/currentUserId?email=${email}`, {
+      headers: this.createAuhtorizationHeader()
+    });
   }
 
   private createAuhtorizationHeader() {

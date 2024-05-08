@@ -1,0 +1,51 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the content horizontally */
+  position: relative; /* Required for absolute positioning */
+}
+
+.content {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+app-navbar-back {
+  flex: 0;
+}
+
+app-sidebar-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.chart-container {
+  width: 800px; /* Adjust the width of the chart */
+  height: 400px; /* Adjust the height of the chart */
+  margin: 0 auto; /* Center the chart horizontally */
+  margin-top: 250px; /* Push the chart to the bottom */
+}

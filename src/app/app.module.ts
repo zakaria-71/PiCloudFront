@@ -44,6 +44,8 @@ import { CalendarResComponent } from './components/reservationClasse/reservation
 import { RouterLink, RouterModule } from '@angular/router';
 import { CalendarModule } from 'angular-calendar';
 import { CommonModule } from '@angular/common';
+import { UserStatComponent } from './user-stat-component/user-stat-component.component';
+
 
 @NgModule({
   declarations: [
@@ -77,9 +79,8 @@ import { CommonModule } from '@angular/common';
     ClassComponent,
     ReservationbackComponent,
     BlocComponent,
-    ReservationComponent,
-   CalendarResComponent
-
+   CalendarResComponent,
+    UserStatComponent,
   ],
   imports: [
     BrowserModule,
