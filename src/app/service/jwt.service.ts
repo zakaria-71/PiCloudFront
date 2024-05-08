@@ -71,6 +71,12 @@ export class JwtService {
         } as RegistrationStat)))
       );
   }
+  getIdUserByEmail():Observable<any>{
+    const email= localStorage.getItem('email');
+    return this.http.get(`${BASE_URL}api/currentUserId?email=${email}`, {
+      headers: this.createAuhtorizationHeader()
+    });
+  }
 
   private createAuhtorizationHeader() {
     const jwtToken1 = localStorage.getItem('jwtToken');
