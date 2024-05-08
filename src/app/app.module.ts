@@ -35,6 +35,7 @@ import { TeamssComponent } from './FrontOffice/teamss/teamss.component';
 import { HomeComponent } from './BackOffice/home/home.component';
 import { CalendarrComponent } from './FrontOffice/calendarr/calendarr.component';
 import {NgChartsModule} from "ng2-charts";
+import { UserStatComponent } from './user-stat-component/user-stat-component.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import {NgChartsModule} from "ng2-charts";
     TeamssComponent,
     HomeComponent,
     CalendarrComponent,
+    UserStatComponent,
   ],
   imports: [
     BrowserModule,

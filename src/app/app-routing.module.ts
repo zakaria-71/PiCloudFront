@@ -21,6 +21,8 @@ import {TeamssComponent} from "./FrontOffice/teamss/teamss.component";
 import {BodyComponent} from "./FrontOffice/body/body.component";
 import {HomeComponent} from "./BackOffice/home/home.component";
 import {CalendarrComponent} from "./FrontOffice/calendarr/calendarr.component";
+import { UserStatComponent } from './user-stat-component/user-stat-component.component';
+
 
 
 const routes: Routes = [
@@ -48,14 +50,15 @@ const routes: Routes = [
       { path: 'teams/ajouterTeam', component: AddtComponent },
       { path: 'teams/editt/:idTeam',component:EdittComponent},
       { path : 'calendar', component:CalendarComponent },
+      
 
     ]
   },{ path: "register", component: RegisterComponent },
   { path: "login", component: LoginComponent },
   { path: "dashboard", component: DashboardComponent,canActivate: [AdminGuard] },
   { path: "profil", component: ProfilComponent },
-  { path: "profil-edit", component: ProfilEditComponent }
-
+  { path: "profil-edit", component: ProfilEditComponent },
+  {path:'UserStatComponent',component:UserStatComponent}
 ];
 
 @NgModule({
