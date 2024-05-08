@@ -6,12 +6,5 @@ export class User{
     email!:string;
     password!:string;
     mobile!: number;
-    reservationT?: ReservationT;
-    testUser={
-        idUser:2,
-        name:"abir",
-        email:"abir@gmail.com",
-        password:"123",
-        mobile: 123456
-      };
+    reservationT?: ReservationT;s
 }

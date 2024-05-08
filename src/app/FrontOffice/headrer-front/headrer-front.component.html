@@ -1,3 +1,18 @@
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>Villa Agency - Real Estate HTML5 Template</title>
+    <!-- Bootstrap core CSS -->
+    <link href="/assets/FrontOffice/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="/assets/FrontOffice/assets/css/fontawesome.css">
+    <link rel="stylesheet" href="/assets/FrontOffice/assets/css/templatemo-villa-agency.css">
+    <link rel="stylesheet" href="/assets/FrontOffice/assets/css/owl.css">
+    <link rel="stylesheet" href="/assets/FrontOffice/assets/css/animate.css">
+    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
 <!-- ***** Header Area Start ***** -->
 <header class="header-area header-sticky">
     <div class="container">
@@ -5,27 +20,55 @@
             <div class="col-12">
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
-                    <a href="index.html" class="logo">
-                        <h1>Villa</h1>
+                    <a href="" class="logo" style="text-align: center;">
+                        <img src="assets\img\edusched.png" alt="Nom de l'image" width="50" height="50" style="display: block; margin: 0 auto; margin-top: 40px;">
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                      <li><a href="index.html" class="active">Home</a></li>
-                      <li><a href="properties.html">Properties</a></li>
-                      <li> <a [routerLink]="['/reserver/', idUser]">Reserver un terrain</a></li>>
-                      <li> <a routerLink="myReservations">mes reservations terrain</a></li>
-                      <li><a href="property-details.html">Property Details</a></li>
-                      <li><a href="contact.html">Contact Us</a></li>
-                      <li><a href="#"><i class="fa fa-calendar"></i> Schedule a visit</a></li>
-                  </ul>   
-                    <a class='menu-trigger'>
-                        <span>Menu</span>
-                    </a>
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li> <a [routerLink]="['/reserver/', idUser]">Reserver un terrain</a></li>>
+                        <li> <a routerLink="myReservations">mes reservations terrain</a></li>                        <li><a  href="/reservationc">Class Reservation</a></li>
+                        <li><a><i class="fa fa-calendar" routerLink="/reservationCalander"></i> Reservations</a></li>
+                        <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            compete
+                          </a>
+                          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li>
+                              <a class="dropdown-item" routerLink="competitionss">Competitions</a>
+                            </li>
+                            <li>
+                              <a class="dropdown-item white-background" routerLink="teamss">Teams</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Account
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <ng-container *ngIf="!isLoggedIn; else loggedIn">
+                                <li><a class="dropdown-item" href="/login">Login</a></li>
+                                <li><a class="dropdown-item" href="/register">Register</a></li>
+                                </ng-container>
+                                <ng-template #loggedIn>
+                                <li *ngIf="isLoggedIn"><a class="dropdown-item" href="/profil">Profil</a></li>
+                                <li *ngIf="isLoggedIn"><a class="dropdown-item" href="javascript:void(0);" (click)="logout()">Logout</a></li>
+                                </ng-template>
+                            </ul>
+                        </li>
+                    </ul>
                     <!-- ***** Menu End ***** -->
                 </nav>
             </div>
         </div>
     </div>
-  </header>
-  <!-- ***** Header Area End ***** -->
+</header>
+<!-- ***** Header Area End ***** -->
+<script src="/assets/FrontOffice/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/FrontOffice/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="/assets/FrontOffice/assets/js/isotope.min.js"></script>
+<script src="/assets/FrontOffice/assets/js/owl-carousel.js"></script>
+<script src="/assets/FrontOffice/assets/js/counter.js"></script>
+<script src="/assets/FrontOffice/assets/js/custom.js"></script>

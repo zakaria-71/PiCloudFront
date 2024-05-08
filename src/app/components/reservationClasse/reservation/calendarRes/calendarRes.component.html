@@ -1,0 +1,26 @@
+<div class="container">
+  <div><button class="btn btn-primary" (click)="navigateToHome()">
+    <i class="fas fa-home"></i>  Home
+  </button></div>
+ 
+  <br>
+  <button class="btn btn-primary" (click)="navigateToReservations()">
+    <i class="fas fa-calendar-alt"></i> Make Reservations
+  </button>
+  <br>
+  
+    <div class="row mb-5">
+      <div class="col-md-12">
+        <div class="content-wrapper" style="display: flex; justify-content: center; align-items: center; margin-left: 300px; margin-top: -1000px;">
+          <div class="container-fluid">
+            <div class="card">
+              <div class="card-body">
+                <div #calendar class="small-calendar"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>

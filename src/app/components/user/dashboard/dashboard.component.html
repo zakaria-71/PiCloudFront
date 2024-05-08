@@ -1,0 +1,31 @@
+<div class="wrapper">
+  <app-navbar-back></app-navbar-back>
+  <div class="container">
+    <div class="content">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Image</th>
+            <th>Action</th> <!-- Add a new column for the action buttons -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users">
+            <td>{{ user.name }}</td>
+            <td>{{ user.email }}</td>
+            <td>
+              <img [src]="user.isAdmin ? '/assets/BackOffice/assets/img/avatars/1.png' : (user.image ? user.imageUrl : 'assets/img/img.webp')" alt="User Image" style="width: 100px; height: auto; border-radius: 50%;">
+            </td>
+            <td>
+              <button *ngIf="!user.isAdmin && !user.isBanned" (click)="banUser(user.email)">Ban</button>
+              <button *ngIf="!user.isAdmin && user.isBanned" (click)="unbanUser(user.email)">Unban</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <app-sidebar-back></app-sidebar-back>
+</div>
