@@ -17,7 +17,6 @@ import { LoginComponent } from './components/user/login/login.component';
 import { ProfilComponent } from './components/user/profil/profil.component';
 import { ProfilEditComponent } from './components/user/profil-edit/profil-edit.component';
 import { RegisterComponent } from './components/user/register/register.component';
-import { NgSelectModule } from '@ng-select/ng-select';
 
 
 
@@ -44,7 +43,6 @@ import { NgSelectModule } from '@ng-select/ng-select';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    NgSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
