@@ -8,7 +8,7 @@ import { Rating } from '../entities/Rating';
   providedIn: 'root'
 })
 export class ReservationTService {
-  private baseUrl="http://localhost:8080";
+  private baseUrl="http://localhost:9090";
   constructor(private http: HttpClient){}
   getReservationTs(): Observable<ReservationT[]>{
     return this.http.get<ReservationT[]>(this.baseUrl+'/findAllReservationT');

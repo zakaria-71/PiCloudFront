@@ -7,7 +7,7 @@ import { Terrain } from '../entities/Terrain';
   providedIn: 'root'
 })
 export class TerrainService {
-  private baseUrl="http://localhost:8080";
+  private baseUrl="http://localhost:9090";
   constructor(private http: HttpClient){}
   getTerrains(): Observable<Terrain[]>{
     return this.http.get<Terrain[]>(this.baseUrl+'/findAllTerrains');
