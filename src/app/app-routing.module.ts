@@ -22,7 +22,6 @@ import {BodyComponent} from "./FrontOffice/body/body.component";
 import {HomeComponent} from "./BackOffice/home/home.component";
 import {CalendarrComponent} from "./FrontOffice/calendarr/calendarr.component";
 import { ReservationComponent } from './components/reservationClasse/reservation/reservation.component';
-import { CalendarResComponent } from './components/reservationClasse/reservation/calendarRes/calendarRes.component';
 import { UserStatComponent } from './user-stat-component/user-stat-component.component';
 
 
@@ -64,7 +63,6 @@ const routes: Routes = [
   { path: "profil", component: ProfilComponent },
   { path: "profil-edit", component: ProfilEditComponent },
   {path:'reservationc',component:ReservationComponent},
-  {path:'reservationCalander',component:  CalendarResComponent},
   {path:'UserStatComponent',component:UserStatComponent}
 ];
 

@@ -40,7 +40,6 @@ import { ClassComponent } from './components/reservationClasse/class/class.compo
 import { ReservationbackComponent } from './components/reservationClasse/reservationback/reservationback.component';
 import { BlocComponent } from './components/reservationClasse/bloc/bloc.component';
 import { Chart } from 'chart.js';
-import { CalendarResComponent } from './components/reservationClasse/reservation/calendarRes/calendarRes.component';
 import { RouterLink, RouterModule } from '@angular/router';
 import { CalendarModule } from 'angular-calendar';
 import { CommonModule } from '@angular/common';
@@ -79,7 +78,6 @@ import { UserStatComponent } from './user-stat-component/user-stat-component.com
     ClassComponent,
     ReservationbackComponent,
     BlocComponent,
-   CalendarResComponent,
     UserStatComponent,
   ],
   imports: [
@@ -96,10 +94,7 @@ import { UserStatComponent } from './user-stat-component/user-stat-component.com
     CalendarModule,
     ReactiveFormsModule,ToastrModule.forRoot({
       positionClass: 'toast-bottom-right',
-
     }),
-    
-    
   ],
   providers: [],
   bootstrap: [AppComponent],
